@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "domain-info.api", "domain-info.api\domain-info.api.csproj", "{82F6B033-D11F-43E5-BB43-E09BBCFDECD3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "domain-info.tests", "domain-info.tests\domain-info.tests.csproj", "{53F65242-339F-4B62-A898-DD76C02C01B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "domain-info.tests", "domain-info.tests\domain-info.tests.csproj", "{53F65242-339F-4B62-A898-DD76C02C01B9}"
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "domain-info.angular", "domain-info.angular\", "{5BD183D8-049B-48C7-B126-7181C8973E17}"
 	ProjectSection(WebsiteProperties) = preProject
@@ -25,6 +25,12 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "domain-info.angular", "doma
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "59163"
+		SlnRelativePath = "domain-info.angular\"
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0A580970-FAE9-4C7C-A907-A7E166A4B17F}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
 	EndProjectSection
 EndProject
 Global
