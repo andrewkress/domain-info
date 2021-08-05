@@ -7,11 +7,13 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using domain_info.Models;
 using domain_info.Services;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 
 namespace domain_info.Controllers
 {
+    [Produces("application/json")]
     [ApiController]
     [Route("[controller]")]
     public class QueryController : ControllerBase {
@@ -28,7 +30,21 @@ namespace domain_info.Controllers
             _virusTotalApiKey = config["virustotal"];
         }
 
+        /// <summary>
+        /// Gets Domain or IP Information
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     Get /Query?domainOrIp&services=whois&services=geo&services=reverseip&services=virustotal
+        ///
+        /// </remarks>
+        /// <returns>Domain or IP information</returns>
+        /// <response code="200">Returns the domain or IP information</response>
+        /// <response code="422">If the domain or IP is not in a valid format</response>      
         [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status422UnprocessableEntity)]
         public async Task<IActionResult> GetAsync(String domainOrIp, [FromQuery] String[] services = null) {
             
             (bool isValid, bool isDomain, bool isIp) = isValidDomainOrIp(domainOrIp);
