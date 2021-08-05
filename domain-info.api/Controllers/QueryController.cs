@@ -47,7 +47,9 @@ namespace domain_info.Controllers
                 if(String.IsNullOrWhiteSpace(xApi)) {
                     httpClient.DefaultRequestHeaders.Remove("x-apikey");
                 } else {
-                    httpClient.DefaultRequestHeaders.Add("x-apikey", xApi);
+                    if (!httpClient.DefaultRequestHeaders.TryGetValues("x-apikey", out _)) {
+                        httpClient.DefaultRequestHeaders.Add("x-apikey", xApi);
+                    }
                 }
                 var result = await httpClient.GetAsync(url);
                 String contentText = await result.Content.ReadAsStringAsync();
