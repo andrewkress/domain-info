@@ -17,4 +17,5 @@
 }
 ```
 8. Start the API using Kestrel
-9. Use the Angular frontend or the Swagger UI test page
+9. Browse to http://localhost:4200
+10. Use the Angular frontend or the Swagger UI test page
