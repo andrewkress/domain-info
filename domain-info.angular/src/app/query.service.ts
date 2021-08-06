@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class QueryService {
-  //
 
   constructor(private http: HttpClient) { }
 
@@ -13,6 +12,7 @@ export class QueryService {
     services.forEach((service) => {
       subQuery += "&services=" + service;
     });
+    // TODO query correct location if running in production mode
     let query = "https://localhost:5001/query?domainOrIp=" + domainOrIp + subQuery;
     return this.http.get(query);
   }

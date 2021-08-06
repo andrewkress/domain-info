@@ -16,11 +16,20 @@ namespace domain_info
 {
     public class Startup
     {
-        readonly string MyAllowSpecificOrigins = "Access-Control-Allow-Origin";
+        readonly string MyAllowSpecificOrigins = "any_origin";
 
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            if(String.IsNullOrWhiteSpace(configuration["whoisxmlapi"])) {
+                Console.WriteLine("Whois XML API key missing");
+            }
+            if (String.IsNullOrWhiteSpace(configuration["ipstack"])) {
+                Console.WriteLine("IP Stack API key missing");
+            }
+            if (String.IsNullOrWhiteSpace(configuration["virustotal"])) {
+                Console.WriteLine("Virus Total API key missing");
+            }
         }
 
         public IConfiguration Configuration { get; }

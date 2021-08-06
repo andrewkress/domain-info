@@ -1,0 +1,24 @@
+
+{
+    "region" : "us-east-2",
+    "profile" : "admin",
+    "configuration" : "Release",
+    "image-tag"     : "domaininfoapi:latest",
+    "docker-build-working-dir" : "",
+    "task-definition-name"     : "domain-info-web-api",
+    "task-cpu"                 : "256",
+    "task-memory"              : "512",
+    "platform-version"         : "LATEST",
+    "task-definition-task-role" : "arn:aws:iam::901984202741:role/ecsTaskExecutionRole",
+    "task-execution-role"       : "ecsTaskExecutionRole",
+    "container-name"            : "domaininfoapi",
+    "container-port-mapping"    : "80:80",
+    "container-environment-variables" : "\"ASPNETCORE_ENVIRONMENT\"=\"Production\"",
+    "cluster"                         : "domain-info-cluster",
+    "launch-type"                     : "FARGATE",
+    "launch-subnets"                  : "subnet-08b9f3a9344bad0cb,subnet-023d010c382783d96",
+    "launch-security-groups"          : "sg-0d8508b9d18e2126b",
+    "assign-public-ip"                : true,
+    "task-count"                      : 1,
+    "vstoolkit-deployment-mode"       : "PushOnly"
+}
